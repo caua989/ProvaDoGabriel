@@ -1,0 +1,28 @@
+{
+  "name": "provadogabriel",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/caua989/ProvaDoGabriel#readme",
+  "bugs": {
+    "url": "https://github.com/caua989/ProvaDoGabriel/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caua989/ProvaDoGabriel.git"
+  },
+  "license": "ISC",
+  "author": "caua",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "jsdoc": "^4.0.5",
+    "swagger": "^0.7.5",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
