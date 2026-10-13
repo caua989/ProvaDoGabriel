@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json());
 
 
-app.use("/docs",swaggerUi.serve,swaggerUi.setup(swaggerSpec))
+app.use("/espaco",swaggerUi.serve,swaggerUi.setup(swaggerSpec))
 
 
 app.get('/status', (req, res) => {
