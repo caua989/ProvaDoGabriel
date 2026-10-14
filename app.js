@@ -120,12 +120,29 @@ res.status(200).json(missao)
 * /missoes:
 *   post:
 *     summary: Cria uma missao
-*     parameters:
-*       - in: path
-*         name: id
-*         required: false
-*         schema:
-*           type: integer
+ *     requestBody:
+        required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - id
+ *               - nome
+ *               - ano
+ *               - agencia
+ *               - status
+ *             properties:
+ *               id:
+ *                 type: integer
+ *               nome:
+ *                 type: string
+ *               ano:
+ *                 type: integer
+ *               agencia:
+ *                  type: string
+ *               status:
+ *                  type: string
 *     responses:
 *       201:
 *         description: missao criada com sucesso
@@ -175,12 +192,29 @@ res.status(200).type('application/xml').send(xml)
 * /missoes/{id}:
 *   put:
 *     summary: Altera uma missao pelo id
-*     parameters:
-*       - in: path
-*         name: id
-*         required: true
-*         schema:
-*           type: integer
+*     requestBody:
+        required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - id
+ *               - nome
+ *               - ano
+ *               - agencia
+ *               - status
+ *             properties:
+ *               id:
+ *                 type: integer
+ *               nome:
+ *                 type: string
+ *               ano:
+ *                 type: integer
+ *               agencia:
+ *                  type: string
+ *               status:
+ *                  type: string
 *     responses:
 *       200:
 *         description: missao alterada com sucesso
@@ -255,26 +289,4 @@ res.status(200).json(dados.current);
 } catch (erro) {
 res.status(502).json({ erro: 'Falha ao consultar serviço de fotos' });
 }
-});
-
-/**
-* @openapi
-* /missoes/endpoint:
-*   get:
-*     summary: Mostra os endpoints
-*     parameters:
-*       - in: path
-*         name: id
-*         required: false
-*         schema:
-*           type: integer
-*     responses:
-*/
-
-app.get('/missoes/endpoint', (req, res) => {
-const endpointMissoes = "Get /missoes, Get /missoes/{id}, Post /missoes, Put /missoes/{id}, Delete /missoes/{id}, Get /apod, Get /missoes/endpoint"
-
-res.status(201).json(endpointMissoes)
 })
-
-export default app
